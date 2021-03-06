@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from guest_book.models import GuestBook
 
-# Create your views here.
+
+def index_view(request):
+    guest_book = GuestBook.objects.all()
+
+    return render(request, 'index.html', {'guest_book': guest_book})
+
