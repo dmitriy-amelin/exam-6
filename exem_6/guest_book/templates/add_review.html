@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Добавление отзыва{% endblock title %}
+
+{% block content %}
+
+    <form class="decor" action="{% url "add_review" %}" method="post">
+        {% csrf_token %}
+            <h3>Создайте новую задачу</h3>
+        {% include 'review_form.html' with button_text="Добавить" %}
+    </form>
+
+{% endblock content %}
