@@ -50,3 +50,13 @@ def review_update_view(request, pk):
             return redirect('review-view', pk=review.id)
 
         return render(request, 'review-update.html', context={'form': form, 'review': review})
+
+
+def review_delete_view(request, pk):
+    review = get_object_or_404(GuestBook, id=pk)
+
+    if request.method == 'GET':
+        return render(request, 'review-delete.html', context={'review': review})
+    elif request.method == 'POST':
+        review.delete()
+        return redirect('review-list')
