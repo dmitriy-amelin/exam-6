@@ -11,6 +11,7 @@
         <ul>
             {% for list in guest_book %}
             <li>
+                <a href="{% url "review-view" list.id %}">
                     <div>{{ list.author }} ({{ list.email }})</div>
                     <div>{{ list.text }}</div>
                 </a>

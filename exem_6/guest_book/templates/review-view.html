@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block menu %}
+    <li><a href="{% url "review-update" review.id %}">Редактировать отзыв</a></li>
+{% endblock menu%}
+
+{% block title %}Отзыва{% endblock title %}
+
+{% block content %}
+    <h3>Задача:</h3>
+    <div class="text-input">Автор:{{ review.author }}</div>
+    <div class="text-input">{{ review.email }}</div>
+    <div class="text-area"> {{ review.text }}</div>
+{% endblock content %}
