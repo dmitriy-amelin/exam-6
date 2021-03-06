@@ -31,4 +31,22 @@ def review_view(request, pk):
 
 
 def review_update_view(request, pk):
-    pass
+    review = get_object_or_404(GuestBook, id=pk)
+
+    if request.method == 'GET':
+        form = ReviewForm(initial={
+            'author': review.author,
+            'email': review.email,
+            'text': review.text
+        })
+        return render(request, 'review-update.html', context={'form': form, 'review': review})
+    elif request.method == 'POST':
+        form = ReviewForm(data=request.POST)
+        if form.is_valid():
+            review.author = request.POST.get("author")
+            review.email = request.POST.get("email")
+            review.text = request.POST.get("text")
+            review.save()
+            return redirect('review-view', pk=review.id)
+
+        return render(request, 'review-update.html', context={'form': form, 'review': review})
