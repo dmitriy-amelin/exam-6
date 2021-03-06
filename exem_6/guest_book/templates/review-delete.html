@@ -8,6 +8,6 @@
     <form action="{% url "review-delete" review.id %}", method="POST">
          {% include 'review_form.html' with button_text="Да, я хочу удалить отзыв" %}
 
-        <div><a class="cancel_button" href="{% url "review-view" review.id %}">Нет, я передумал.</a></div>
+        <div><a class="btn btn-danger" role="button" href="{% url "review-view" review.id %}">Нет, я передумал.</a></div>
     </form>
 {% endblock content %}

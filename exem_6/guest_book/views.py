@@ -21,7 +21,7 @@ def add_review(request):
                 email=form.cleaned_data.get("email"),
                 text=form.cleaned_data.get("text")
             )
-            return redirect('review-view', pk=review.id)
+            return redirect('review-list')
         return render(request, 'add_review.html', context={'form': form, 'choices': status_choices})
 
 
@@ -47,7 +47,7 @@ def review_update_view(request, pk):
             review.email = request.POST.get("email")
             review.text = request.POST.get("text")
             review.save()
-            return redirect('review-view', pk=review.id)
+            return redirect('review-list')
 
         return render(request, 'review-update.html', context={'form': form, 'review': review})
 

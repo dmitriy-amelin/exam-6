@@ -1,0 +1,96 @@
+body{
+	margin: 0;
+	color: #000000;
+	font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+	line-height: 1.3;
+    background: antiquewhite;
+}
+
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.header{
+	background-color: cornflowerblue;
+}
+
+.header-inner{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo{
+	display: inline-block;
+	font-size: 20px;
+	color: whitesmoke;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 25px 30px;
+}
+
+.main-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.main-nav li{
+	display: inline-block;
+}
+
+.main-nav a{
+	font-size: 14px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-left: 20px;
+}
+
+.review{
+    border: solid;
+    width: 500px;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.box-header{
+    font-size: 11pt;
+    font-weight: 700;
+
+}
+
+.ico-edit{
+    position:absolute;
+    top:10px;
+    left:400px;
+}
+
+.ico-delete{
+    position:absolute;
+    top:10px;
+    left:450px;
+}
+
+.cancel_button {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-error {
+    color: red;
+    font-size: 12px;
+    margin: 5px 0 0 0
+}
+.form-field-error {
+    border: solid 1px red;
+    box-shadow: red 0 0 3px;
+    display: inline-block;
+}
