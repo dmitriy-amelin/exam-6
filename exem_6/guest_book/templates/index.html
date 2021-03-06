@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Список отзывов{% endblock title %}
+
+{% block content %}
+
+{% if not guest_book %}
+    <h2>ОТЗЫВОВ НЕТ</h2>
+{% endif %}
+    <div class="link">
+        <ul>
+            {% for list in guest_book %}
+            <li>
+                    <div>{{ list.author }} ({{ list.email }})</div>
+                    <div>{{ list.text }}</div>
+                </a>
+            </li>
+            <hr>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
